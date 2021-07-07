@@ -1,19 +1,19 @@
-import pandas as pd
-import pytest
 from datetime import date
 
-from src.preprocess import parse_date_columns
+import pandas as pd
 from pandas.testing import assert_frame_equal
+
+from src.preprocess import parse_date_columns
 
 
 def test_parse_date_columns():
     # Arrange
     data = pd.DataFrame([{"date_col": "2021-01-01"}])
-    expected = pd.DataFrame([{"date_col": date(2021,1,1)}])
+    expected = pd.DataFrame([{"date_col": date(2021, 1, 1)}])
     # Act
     actual = parse_date_columns(data, ["date_col"])
     # Assert
-    assert_frame_equal(expected,actual)
+    assert_frame_equal(expected, actual)
 
 
 def test_scale_columns():

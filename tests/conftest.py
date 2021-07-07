@@ -1,1 +1,1 @@
-from tests.fixtures.preprocess import sample_df
+from tests.fixtures.preprocess import sample_df  # noqa: F401
