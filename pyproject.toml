@@ -1,0 +1,31 @@
+[tool.black]
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+]
+
+addopts = [
+  "--cov=src",
+  "--cov-report=html"
+]
+
+[tool.coverage.report]
+fail_under = 50
+
+[tool.isort]
+profile = "black"

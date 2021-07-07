@@ -1,0 +1,28 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pandas = "*"
+scikit-learn = "*"
+
+[dev-packages]
+pytest = "*"
+pytest-cov = "*"
+coverage = "*"
+black = "==21.6b0"
+flake8 = "*"
+mypy = "*"
+isort = "*"
+
+[requires]
+python_version = "3.8"
+
+[scripts]
+format = "black ."
+lint = "flake8 ."
+requirements = "pipenv lock -r > requirements.txt"
+sort = "isort ."
+tests  = "python -m pytest --cov=unit_tests tests/"
+typecheck = "mypy ."
